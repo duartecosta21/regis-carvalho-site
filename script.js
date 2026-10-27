@@ -45,22 +45,14 @@ const projects = {
   }
 };
 
-// Somente relatos reais aprovados entram nesta coleção.
-// A seção e sua navegação permanecem ausentes quando não há material.
-const testimonials = [];
-if (testimonials.length) {
-  const section = document.getElementById('depoimentos');
-  const list = document.getElementById('testimonial-list');
-  testimonials.forEach(({quote, name}) => {
-    const figure = document.createElement('figure');
-    const blockquote = document.createElement('blockquote');
-    const caption = document.createElement('figcaption');
-    blockquote.textContent = quote;
-    caption.textContent = name;
-    figure.append(blockquote, caption);
-    list.append(figure);
-  });
-  section.hidden = false;
+// Depoimentos: entrada escalonada na rolagem
+const testimonialList = document.querySelector('.testimonial-list');
+if (testimonialList && 'IntersectionObserver' in window) {
+  testimonialList.classList.add('t-wait');
+  const tObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { testimonialList.classList.add('is-seen'); tObserver.disconnect(); }
+  }, {threshold: .15});
+  tObserver.observe(testimonialList);
 }
 
 const gallery = document.getElementById('gallery-dialog');
