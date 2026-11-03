@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Regis Carvalho | Arquitetura e Interiores em Vila Velha</title>
+<meta name="description" content="Arquitetura e interiores em Vila Velha, ES. Casas do zero, reformas e espaços comerciais, do levantamento ao projeto 3D e técnico.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#15140F">
+<link rel="icon" href="img/favicon.png">
+<link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lcd-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Hanken;src:url(fonts/hanken.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:Caslon;src:url(fonts/lcd-400.woff2) format('woff2');font-weight:400;font-display:swap}
+:root{--ink:#15140F;--ink2:#1E1C16;--ink3:#28241B;--cream:#FAF6EB;--paper:#F2ECDD;--gold:#C3A77F;--gold2:#D1B075;--mute:#A79D8A;--mute2:#6E6656;--line:rgba(195,167,127,.35);
+--sans:Hanken,'Helvetica Neue',Arial,sans-serif;--serif:Caslon,Georgia,serif;--ease:cubic-bezier(.2,.7,.1,1);--g:clamp(16px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--cream);font:400 16px/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+picture{display:contents}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{width:1em;height:1em}
+.sr,.skip{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.skip:focus{position:fixed;z-index:99;left:12px;top:12px;width:auto;height:auto;clip:auto;background:var(--gold);color:var(--ink);padding:10px 14px}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+.kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.kicker.dark{color:#8A6E44}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:15px 24px;border-radius:2px;text-decoration:none;font-size:15px;letter-spacing:.02em;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold2)}
+.btn.line{border:1px solid rgba(250,246,235,.5)}
+.btn.line:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.dark{background:var(--ink);color:var(--cream)}
+.btn.big{font-size:18px;padding:18px 28px}
+.btn.big svg{width:22px;height:22px}
+
+/* topo */
+.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px var(--g);transition:background .4s,padding .4s,color .4s}
+.brand img{height:30px;width:auto}
+.lg-p{display:none}
+.top.solid{background:rgba(250,246,235,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);padding-top:14px;padding-bottom:14px;box-shadow:0 1px 0 rgba(21,20,15,.08)}
+.top.solid .lg-c{display:none}.top.solid .lg-p{display:block}
+.nav{display:flex;gap:30px;align-items:center;font-size:14px;letter-spacing:.04em}
+.nav a{text-decoration:none;position:relative}
+.nav a:not(.nav-cta)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.nav-cta{border:1px solid currentColor;padding:9px 16px}
+.menu-btn{display:none;width:44px;height:44px;position:relative}
+.menu-btn span:not(.sr){position:absolute;left:10px;right:10px;height:1.5px;background:currentColor;transition:transform .3s}
+.menu-btn span:nth-child(1){top:17px}.menu-btn span:nth-child(2){top:26px}
+.menu-btn[aria-expanded=true] span:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
+.menu-btn[aria-expanded=true] span:nth-child(2){transform:translateY(-4.5px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:19;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:0 var(--g);gap:6px}
+.menu a{font-family:var(--serif);font-size:42px;text-decoration:none;line-height:1.25}
+.menu[hidden]{display:none}
+.menu-foot{margin-top:28px;color:var(--mute);font-size:14px}
+
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--ink)}
+.hero-media{position:absolute;inset:0;clip-path:inset(0);animation:abre 1.1s var(--ease) both}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease}
+.slide.on{opacity:1;z-index:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7.5s linear}
+.slide.on img{transform:scale(1)}
+.slide figcaption{position:absolute;right:var(--g);top:96px;font-size:12px;letter-spacing:.08em;color:rgba(250,246,235,.85);text-align:right;opacity:0;transition:opacity .6s .5s}
+.slide.on figcaption{opacity:1}
+.slide figcaption em{display:block;font-style:normal;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;margin-top:2px}
+.cap-code{font-family:var(--serif);font-size:17px;letter-spacing:.04em;margin-right:4px}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(21,20,15,.55) 0,rgba(21,20,15,0) 20%,rgba(21,20,15,.12) 40%,rgba(21,20,15,.78) 72%,rgba(21,20,15,.9) 100%),linear-gradient(90deg,rgba(21,20,15,.45) 0,rgba(21,20,15,0) 60%)}
+.hero-in{position:absolute;z-index:3;left:var(--g);right:var(--g);bottom:clamp(96px,14vh,150px);max-width:900px}
+.hero h1{font-size:clamp(44px,7.6vw,116px);font-weight:400;margin:14px 0 18px}
+.hero-sub{font-size:clamp(17px,1.5vw,21px);color:rgba(250,246,235,.88);margin-bottom:28px}
+.hero-cta span{display:flex;flex-wrap:wrap;gap:12px}
+.ln{display:block;overflow:hidden;padding-bottom:.04em}
+.ln>span{display:block;animation:sobe .95s var(--ease) both}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.hero-sub>span{animation-delay:.3s}.hero-cta>span{animation-delay:.4s}
+.hero-bar{position:absolute;z-index:3;left:var(--g);right:var(--g);bottom:34px;display:flex;align-items:center;gap:22px}
+.cota{flex:1;display:flex;align-items:center;height:14px;color:var(--gold)}
+.cota>i{width:1px;height:14px;background:currentColor}
+.cota-run{flex:1;height:1px;background:rgba(250,246,235,.25);position:relative;transform-origin:left;animation:traca 1.2s .2s var(--ease) both}
+.cota-fill{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.hero-ctrl{display:flex;align-items:center;gap:6px}
+.dot{width:28px;height:28px;position:relative}
+.dot::after{content:'';position:absolute;left:8px;right:8px;top:13px;height:2px;background:rgba(250,246,235,.4);transition:background .3s}
+.dot.on::after{background:var(--gold)}
+.pause{width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(250,246,235,.4);border-radius:50%;margin-left:6px}
+.pause svg{width:14px;height:14px}
+@keyframes abre{from{clip-path:inset(0 44% 0 44%)}to{clip-path:inset(0)}}
+@keyframes sobe{from{transform:translateY(108%)}to{transform:none}}
+@keyframes traca{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* fatos */
+.fatos{border-bottom:1px solid var(--line);padding:0 var(--g)}
+.fatos ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
+.fatos li{padding:28px 22px 28px 0;display:flex;flex-direction:column;gap:2px;border-right:1px solid var(--line);margin-right:22px}
+.fatos li:last-child{border-right:0}
+.fatos strong{font-family:var(--serif);font-weight:400;font-size:26px}
+.fatos span{font-size:13.5px;color:var(--mute)}
+
+/* projetos */
+.projetos{padding:clamp(70px,10vw,130px) 0 60px}
+.sec-head{padding:0 var(--g);display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:38px}
+.sec-head h2{font-size:clamp(44px,6vw,86px);position:relative;padding-top:22px}
+.h-cota{position:absolute;left:0;top:0;width:min(220px,40vw);height:9px;border-left:1px solid var(--gold);border-right:1px solid var(--gold);transform-origin:left}
+.h-cota::after{content:'';position:absolute;left:0;right:0;top:4px;height:1px;background:var(--gold)}
+.filtros{display:flex;flex-wrap:wrap;gap:8px}
+.f{padding:9px 16px;border:1px solid var(--line);border-radius:30px;font-size:13.5px;color:var(--mute);transition:all .3s}
+.f:hover{color:var(--cream);border-color:var(--gold)}
+.f.on{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,24px);padding:0 var(--g)}
+.proj{position:relative;transition:opacity .45s,transform .45s var(--ease)}
+.proj.fora{display:none}
+.proj.feat{grid-column:1/-1}
+.proj-open{display:block;width:100%;text-align:left;cursor:none}
+@media (pointer:coarse){.proj-open{cursor:pointer}}
+.proj-img{display:block;overflow:hidden;aspect-ratio:4/5;background:var(--ink2);position:relative}
+.proj.feat .proj-img{aspect-ratio:21/9}
+.proj-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.55) brightness(.86);transform:scale(1.02);transition:filter .8s,transform 1.4s var(--ease)}
+.proj-open:hover .proj-img img,.proj-open:focus-visible .proj-img img,.proj.vivo .proj-img img{filter:none;transform:scale(1.05)}
+.proj-info{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:16px 0 6px;border-bottom:1px solid var(--line)}
+.proj-code{font-family:var(--serif);font-size:clamp(28px,2.6vw,40px);color:var(--gold2);min-width:2.4em;letter-spacing:.02em}
+.proj.feat .proj-code{font-size:clamp(34px,4vw,58px)}
+.proj-nome{display:block;font-size:17px}
+.proj-meta{display:block;font-size:13.5px;color:var(--mute)}
+.chip{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);color:var(--mute);white-space:nowrap}
+.chip.obra{border-color:var(--gold);color:var(--gold2)}
+.nota{padding:26px var(--g) 0;font-size:13.5px;color:var(--mute2)}
+.cursor{position:fixed;left:0;top:0;z-index:30;pointer-events:none;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;transform:scale(0);transition:transform .35s var(--ease)}
+.cursor.on{transform:scale(1)}
+.cursor::before,.cursor::after{content:'';position:absolute;background:var(--ink);opacity:.5}
+.cursor::before{left:50%;top:8px;width:1px;height:12px}.cursor::after{top:50%;left:8px;height:1px;width:12px}
+
+/* processo */
+.processo{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,5vw,90px);padding:clamp(80px,10vw,140px) var(--g)}
+.proc-fix{position:sticky;top:110px;align-self:start}
+.processo h2{font-size:clamp(40px,4.6vw,68px);margin:16px 0 20px}
+.proc-lead{color:#5b5446;max-width:440px}
+.proc-idx{list-style:none;margin-top:44px;border-top:1px solid rgba(21,20,15,.15)}
+.proc-idx li{padding:13px 0;border-bottom:1px solid rgba(21,20,15,.15);color:#9a917f;transition:color .4s,padding .4s;font-size:15px}
+.proc-idx li.on{color:var(--ink);padding-left:14px;box-shadow:inset 2px 0 0 #8A6E44}
+.passos{list-style:none;display:flex;flex-direction:column;gap:clamp(60px,8vw,120px)}
+.passo-img{overflow:hidden;aspect-ratio:4/5;background:#e4dccb}
+.passo-img img{width:100%;height:100%;object-fit:cover;clip-path:inset(12% 0 0 0);transform:scale(1.06);transition:clip-path 1.2s var(--ease),transform 1.6s var(--ease)}
+.passo.vis .passo-img img{clip-path:inset(0);transform:none}
+.passo-txt{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin-top:20px}
+.passo-n{font-family:var(--serif);font-size:44px;line-height:1;color:#8A6E44;grid-row:span 2}
+.passo h3{font-size:30px}
+.passo p{color:#5b5446;max-width:520px}
+
+/* reforma */
+.reforma{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,5vw,80px);padding:clamp(80px,10vw,130px) var(--g);align-items:center;background:var(--ink2)}
+.reforma h2{font-size:clamp(38px,4.4vw,64px);margin:16px 0 20px}
+.reforma p{color:rgba(250,246,235,.8);margin-bottom:28px;max-width:470px}
+.ref-img{display:grid;grid-template-columns:1fr 2fr;gap:14px;align-items:end}
+.antes{display:grid;gap:14px;position:relative}
+.antes img{aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(.95);opacity:.85}
+.depois{position:relative}
+.depois img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.tag{position:absolute;z-index:1;left:10px;top:10px;background:rgba(21,20,15,.75);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px}
+.depois .tag{background:var(--gold);color:var(--ink)}
+
+/* escritório */
+.escritorio{background:var(--cream);color:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,90px);padding:clamp(80px,10vw,140px) var(--g);align-items:center}
+.esc-img{overflow:hidden}
+.esc-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.escritorio h2{font-size:clamp(46px,5.4vw,80px);margin:14px 0 22px}
+.esc-txt>p:not(.kicker){color:#4d473b;max-width:540px}
+.carvalho{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center;margin:40px 0 36px;position:relative}
+.aneis{position:absolute;left:-40px;top:50%;width:200px;height:200px;margin-top:-100px;fill:none;stroke:#C3A77F;stroke-width:.6;opacity:.6}
+.aneis circle{stroke-dasharray:560;stroke-dashoffset:560;transition:stroke-dashoffset 2s var(--ease)}
+.carvalho.vis .aneis circle{stroke-dashoffset:0}
+.carvalho.vis .aneis circle:nth-child(2){transition-delay:.15s}.carvalho.vis .aneis circle:nth-child(3){transition-delay:.3s}.carvalho.vis .aneis circle:nth-child(4){transition-delay:.45s}.carvalho.vis .aneis circle:nth-child(5){transition-delay:.6s}
+.carvalho img{width:120px;position:relative}
+.carvalho blockquote p{font-family:var(--serif);font-size:23px;line-height:1.3}
+.carvalho cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:#8A6E44}
+
+/* depoimentos */
+.depoimentos{padding:clamp(80px,10vw,130px) 0}
+.depoimentos .sec-head p{color:var(--mute)}
+.deps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);padding:0 var(--g);align-items:start}
+.dep-btn{display:block;width:100%;background:#0d0c09;padding:14px;border:1px solid var(--line);cursor:zoom-in}
+.dep-btn img{width:100%;max-height:560px;object-fit:contain}
+.dep figcaption{margin-top:12px;font-size:13.5px;color:var(--mute)}
+.dep strong{display:block;color:var(--cream);font-weight:500;font-size:16px}
+
+/* contato */
+.contato{background:var(--ink3);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,90px);padding:clamp(80px,10vw,130px) var(--g)}
+.contato h2{font-size:clamp(44px,5.4vw,80px);margin:16px 0 20px}
+.cont-txt>p:not(.kicker){color:rgba(250,246,235,.8);margin-bottom:30px;max-width:480px}
+.ig{display:block;margin-top:18px;color:var(--gold2)}
+.form{background:var(--cream);color:var(--ink);padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:18px}
+.form fieldset{border:0}
+.form legend,.campo>span{font-size:14px;font-weight:600;margin-bottom:8px;display:block}
+.campo em{font-weight:400;color:#7a7262;font-style:normal}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0}
+.opts span{display:block;padding:13px 14px;border:1.5px solid #cfc6b3;font-size:15px;cursor:pointer;transition:all .25s}
+.opts input:checked+span{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+.opts input:focus-visible+span{outline:2px solid #8A6E44;outline-offset:2px}
+.campo input{width:100%;padding:14px;border:1.5px solid #cfc6b3;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.campo input:focus{border-color:var(--ink);outline:0}
+.form .btn{justify-content:center}
+.form-nota{font-size:13px;color:#6d6555}
+
+/* rodapé */
+.rodape{padding:60px var(--g) 110px;display:flex;flex-direction:column;gap:10px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+.rodape img{width:200px;margin-bottom:10px}
+.rodape a,.reduz{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
+.copy{font-size:12.5px;color:var(--mute2)}
+.wa-fixo{position:fixed;right:18px;bottom:18px;z-index:15;display:flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);padding:13px 18px;border-radius:40px;text-decoration:none;font-size:14.5px;box-shadow:0 6px 24px rgba(0,0,0,.3);transform:translateY(140%);transition:transform .5s var(--ease)}
+.wa-fixo svg{width:20px;height:20px}
+.wa-fixo.on{transform:none}
+
+/* revelação */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform 1s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.sec-head h2.vis .h-cota{animation:traca 1s .1s var(--ease) both}
+
+/* diálogo do projeto */
+dialog{border:0;padding:0;max-width:none;max-height:none}
+.pj{position:fixed;inset:0;width:100%;height:100%;background:var(--ink);color:var(--cream);display:none;flex-direction:column}
+.pj[open]{display:flex;animation:pjin .45s var(--ease)}
+.pj::backdrop{background:rgba(0,0,0,.6)}
+@keyframes pjin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pj-head{display:flex;justify-content:space-between;align-items:start;padding:22px var(--g) 14px;gap:20px}
+.pj-code{font-family:var(--serif);font-size:20px;color:var(--gold2)}
+.pj h2{font-size:clamp(28px,3.4vw,46px)}
+.pj-head p{color:var(--mute);font-size:14px}
+.pj-x{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;flex:none}
+.pj-x svg{width:20px;height:20px}
+.pj-track{flex:1;min-height:0;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--g);scrollbar-width:thin;scrollbar-color:var(--gold) transparent;overscroll-behavior:contain;scroll-padding-left:var(--g)}
+.pj-track figure{flex:none;height:100%;scroll-snap-align:start;position:relative;background:var(--ink2)}
+.pj-track img{height:100%;width:100%;object-fit:cover}
+.pj-track .antes-fig figcaption{position:absolute;left:10px;top:10px;background:rgba(21,20,15,.8);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px}
+.pj-foot{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:16px var(--g) 22px}
+.pj-desc{max-width:720px}
+.pj-desc p{margin:10px 0 4px;color:rgba(250,246,235,.86);font-size:15px}
+.pj-desc small{color:var(--mute2);font-size:12px}
+.pj-nav{display:flex;align-items:center;gap:8px;flex:none}
+.pj-nav span{font-size:13px;color:var(--mute);margin-right:6px;min-width:44px}
+.pj-prev,.pj-next{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%}
+.pj-prev svg{transform:rotate(180deg)}
+.pj-prev svg,.pj-next svg{width:18px;height:18px}
+.pj-outro{display:inline-flex;align-items:center;gap:8px;margin-left:10px;padding:12px 16px;border:1px solid var(--line);font-size:14px}
+.pj-outro svg{width:16px;height:16px}
+.dz{position:fixed;inset:0;width:100%;height:100%;background:rgba(10,9,7,.96);display:none;place-items:center}
+.dz[open]{display:grid}
+.dz img{max-width:92vw;max-height:88vh;object-fit:contain}
+.dz .pj-x{position:absolute;right:18px;top:18px;color:var(--cream)}
+
+/* tablet e celular */
+@media (max-width:1000px){
+  .nav{display:none}.menu-btn{display:block}
+  .fatos ul{grid-template-columns:1fr 1fr}
+  .fatos li:nth-child(2){border-right:0}
+  .fatos li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .processo,.reforma,.escritorio,.contato{grid-template-columns:1fr}
+  .proc-fix{position:static}.proc-idx{display:none}
+  .deps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .top{padding:16px var(--g)}.brand img{height:24px}
+  .hero-in{bottom:104px}
+  .hero h1{font-size:clamp(42px,12.4vw,60px)}
+  .slide figcaption{top:auto;bottom:66px;right:auto;left:var(--g);text-align:left}
+  .hero-bar{bottom:24px}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center;padding:14px 16px}
+  .fatos li{padding:20px 12px 20px 0;margin-right:12px}
+  .fatos strong{font-size:21px}.fatos span{font-size:12.5px}
+  .grid{grid-template-columns:1fr;gap:28px}
+  .proj.feat .proj-img{aspect-ratio:4/5}
+  .proj-info{grid-template-columns:auto 1fr;gap:4px 14px}
+  .proj-info .chip{grid-column:1/-1;justify-self:start;margin-top:6px}
+  .filtros{overflow-x:auto;flex-wrap:nowrap;margin:0 calc(var(--g) * -1);padding:0 var(--g);scrollbar-width:none;width:100vw}
+  .filtros::-webkit-scrollbar{display:none}
+  .f{flex:none}
+  .ref-img{grid-template-columns:1fr 1.6fr}
+  .deps{grid-template-columns:1fr}
+  .carvalho{grid-template-columns:84px 1fr;gap:16px}.carvalho img{width:84px}
+  .aneis{left:-58px;width:200px}
+  .carvalho blockquote p{font-size:20px}
+  .pj-head{padding-top:16px}
+  .pj-track{gap:10px}
+  .pj-track figure{height:100%;max-width:86vw}
+  .pj-track img{width:100%;height:100%;object-fit:cover}
+  .pj-foot{flex-direction:column;align-items:stretch;gap:12px;padding-bottom:18px}
+  .pj-desc p{font-size:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .pj-nav{justify-content:space-between}
+  .pj-outro{margin-left:auto}
+}
+@media (min-width:641px){.wa-fixo span{display:inline}}
+@media (max-width:640px){.wa-fixo{left:14px;right:14px;justify-content:center;bottom:14px}}
+
+/* movimento reduzido: sistema ou controle da página */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.slide img{transform:none}.passo-img img{clip-path:none;transform:none}.aneis circle{stroke-dashoffset:0}
+}
+.reduzido *,.reduzido *::before,.reduzido *::after{animation:none!important;transition:none!important}
+.reduzido .rv{opacity:1;transform:none}.reduzido .slide img{transform:none}.reduzido .passo-img img{clip-path:none;transform:none}.reduzido .aneis circle{stroke-dashoffset:0}
+html.reduzido{scroll-behavior:auto}
+.hero-cta>span{display:flex}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="top" id="top">
+  <a class="brand" href="#inicio" aria-label="Regis Carvalho, início"><img class="lg-c" src="img/logo-creme.png" width="747" height="155" alt="Regis Carvalho Arquitetura"><img class="lg-p" src="img/logo-preto.png" width="747" height="155" alt="" aria-hidden="true"></a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#projetos">Projetos</a><a href="#processo">Como trabalho</a><a href="#escritorio">O escritório</a><a href="#depoimentos">Depoimentos</a>
+    <a class="nav-cta" href="#contato">Vamos conversar</a>
+  </nav>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr">Menu</span></button>
+</header>
+<div class="menu" id="menu" hidden>
+  <a href="#projetos">Projetos</a><a href="#processo">Como trabalho</a><a href="#escritorio">O escritório</a><a href="#depoimentos">Depoimentos</a><a href="#contato">Vamos conversar</a>
+  <p class="menu-foot">Vila Velha, ES · Atendimento presencial e online</p>
+</div>
+
+<main id="conteudo">
+<section class="hero" id="inicio" aria-label="Abertura">
+  <div class="hero-media" aria-live="off"><figure class="slide on" data-i="0"><picture><source type="image/avif" srcset="img/hero-0-720.avif 720w, img/hero-0-1080.avif 1080w, img/hero-0-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="img/hero-0-720.webp 720w, img/hero-0-1080.webp 1080w, img/hero-0-1440.webp 1440w" sizes="100vw"><img src="img/hero-0-1440.webp" width="1440" height="1440" alt="Residência E | S, imagens em 3d" fetchpriority="high" decoding="async"></picture><figcaption><span class="cap-code">E | S</span> Residência E | S <em>Imagens em 3D</em></figcaption></figure><figure class="slide" data-i="1"><picture><source type="image/avif" srcset="img/hero-1-720.avif 720w" sizes="100vw"><source type="image/webp" srcset="img/hero-1-720.webp 720w" sizes="100vw"><img src="img/hero-1-720.webp" width="720" height="720" alt="Chalé J | M, imagens em 3d" loading="lazy" decoding="async"></picture><figcaption><span class="cap-code">J | M</span> Chalé J | M <em>Imagens em 3D</em></figcaption></figure><figure class="slide" data-i="2"><picture><source type="image/avif" srcset="img/hero-2-720.avif 720w, img/hero-2-1080.avif 1080w, img/hero-2-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="img/hero-2-720.webp 720w, img/hero-2-1080.webp 1080w, img/hero-2-1440.webp 1440w" sizes="100vw"><img src="img/hero-2-1440.webp" width="1440" height="1440" alt="Casa A | E, imagens em 3d" loading="lazy" decoding="async"></picture><figcaption><span class="cap-code">A | E</span> Casa A | E <em>Imagens em 3D</em></figcaption></figure><figure class="slide" data-i="3"><picture><source type="image/avif" srcset="img/hero-3-720.avif 720w, img/hero-3-1080.avif 1080w, img/hero-3-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="img/hero-3-720.webp 720w, img/hero-3-1080.webp 1080w, img/hero-3-1440.webp 1440w" sizes="100vw"><img src="img/hero-3-1440.webp" width="1440" height="1440" alt="Cozinha BL, obra finalizada" loading="lazy" decoding="async"></picture><figcaption><span class="cap-code">BL</span> Cozinha BL <em>Obra finalizada</em></figcaption></figure></div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="kicker ln"><span>Arquitetura e interiores · Vila Velha, ES</span></p>
+    <h1><span class="ln"><span>Do projeto à obra,</span></span><span class="ln"><span>sem improviso.</span></span></h1>
+    <p class="hero-sub ln"><span>Casas do zero, reformas e espaços comerciais.</span></p>
+    <div class="hero-cta ln"><span><a class="btn gold" href="#contato">Conversar sobre meu projeto</a><a class="btn line" href="#projetos">Ver projetos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></span></div>
+  </div>
+  <div class="hero-bar">
+    <div class="cota" aria-hidden="true"><i class="t0"></i><b class="cota-run"><i class="cota-fill"></i></b><i class="t1"></i></div>
+    <div class="hero-ctrl"><button class="dot on" data-go="0" aria-label="Imagem 1 de 4"></button><button class="dot" data-go="1" aria-label="Imagem 2 de 4"></button><button class="dot" data-go="2" aria-label="Imagem 3 de 4"></button><button class="dot" data-go="3" aria-label="Imagem 4 de 4"></button><button class="pause" aria-pressed="false" aria-label="Pausar imagens"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.6"/></svg></button></div>
+  </div>
+</section>
+
+<section class="fatos" aria-label="Em resumo">
+  <ul>
+    <li><strong>13 projetos</strong><span>5 obras finalizadas e 8 em 3D</span></li>
+    <li><strong>Mais de 5 anos</strong><span>em projetos residenciais e comerciais</span></li>
+    <li><strong>Do zero à reforma</strong><span>arquitetônico, interiores e consultoria</span></li>
+    <li><strong>Presencial e online</strong><span>escritório em Vila Velha, ES</span></li>
+  </ul>
+</section>
+
+<section class="projetos" id="projetos" aria-labelledby="t-proj">
+  <div class="sec-head">
+    <h2 id="t-proj" class="rv"><span class="h-cota" aria-hidden="true"></span>Projetos</h2>
+    <div class="filtros" role="group" aria-label="Filtrar projetos">
+      <button class="f on" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="f" data-f="obra" aria-pressed="false">Obras finalizadas</button>
+      <button class="f" data-f="3d" aria-pressed="false">Em 3D</button>
+      <button class="f" data-f="residencial" aria-pressed="false">Residencial</button>
+      <button class="f" data-f="comercial" aria-pressed="false">Comercial</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"><article class="proj feat rv" data-status="3d" data-cat="residencial"><button class="proj-open" data-proj="es" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/es-capa-640.avif 640w, img/es-capa-1080.avif 1080w, img/es-capa-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="img/es-capa-640.webp 640w, img/es-capa-1080.webp 1080w, img/es-capa-1440.webp 1440w" sizes="100vw"><img src="img/es-capa-1440.webp" width="1440" height="1440" alt="Residência E | S: Casa do zero, do arquitetônico aos interiores" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">E | S</span><span class="proj-txt"><span class="proj-nome">Residência E | S</span><span class="proj-meta">Casa do zero, do arquitetônico aos interiores · Vila Velha, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj feat rv" data-status="obra" data-cat="residencial"><button class="proj-open" data-proj="aj" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/aj-capa-640.avif 640w, img/aj-capa-1080.avif 1080w, img/aj-capa-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="img/aj-capa-640.webp 640w, img/aj-capa-1080.webp 1080w, img/aj-capa-1440.webp 1440w" sizes="100vw"><img src="img/aj-capa-1440.webp" width="1440" height="1440" alt="Cozinha AJ: Cozinha com brasilidade" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">AJ</span><span class="proj-txt"><span class="proj-nome">Cozinha AJ</span><span class="proj-meta">Cozinha com brasilidade · Vila Velha, ES</span></span><span class="chip obra">Obra finalizada</span></span></button></article><article class="proj feat rv" data-status="3d" data-cat="residencial"><button class="proj-open" data-proj="jm" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/jm-capa-640.avif 640w, img/jm-capa-720.avif 720w" sizes="100vw"><source type="image/webp" srcset="img/jm-capa-640.webp 640w, img/jm-capa-720.webp 720w" sizes="100vw"><img src="img/jm-capa-720.webp" width="720" height="720" alt="Chalé J | M: Chalé com 92 m² em dois pavimentos" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">J | M</span><span class="proj-txt"><span class="proj-nome">Chalé J | M</span><span class="proj-meta">Chalé com 92 m² em dois pavimentos · Brejetuba, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="3d" data-cat="residencial"><button class="proj-open" data-proj="ae" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/ae-capa-640.avif 640w, img/ae-capa-1080.avif 1080w, img/ae-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/ae-capa-640.webp 640w, img/ae-capa-1080.webp 1080w, img/ae-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/ae-capa-1440.webp" width="1440" height="1440" alt="Casa A | E: Releitura contemporânea da casa brasileira" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">A | E</span><span class="proj-txt"><span class="proj-nome">Casa A | E</span><span class="proj-meta">Releitura contemporânea da casa brasileira · Vila Velha, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="obra" data-cat="residencial"><button class="proj-open" data-proj="bl" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/bl-capa-640.avif 640w, img/bl-capa-1080.avif 1080w, img/bl-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/bl-capa-640.webp 640w, img/bl-capa-1080.webp 1080w, img/bl-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/bl-capa-1440.webp" width="1440" height="1440" alt="Cozinha BL: Reforma de cozinha e lavabo" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">BL</span><span class="proj-txt"><span class="proj-nome">Cozinha BL</span><span class="proj-meta">Reforma de cozinha e lavabo · Vila Velha, ES</span></span><span class="chip obra">Obra finalizada</span></span></button></article><article class="proj rv" data-status="obra" data-cat="residencial"><button class="proj-open" data-proj="a405" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/a405-capa-640.avif 640w, img/a405-capa-720.avif 720w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/a405-capa-640.webp 640w, img/a405-capa-720.webp 720w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/a405-capa-720.webp" width="720" height="1280" alt="Airbnb 405: Reforma para locação por temporada, 23 m²" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">405</span><span class="proj-txt"><span class="proj-nome">Airbnb 405</span><span class="proj-meta">Reforma para locação por temporada, 23 m² · Praia de Itapuã, Vila Velha</span></span><span class="chip obra">Obra finalizada</span></span></button></article><article class="proj rv" data-status="3d" data-cat="residencial"><button class="proj-open" data-proj="tb" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/tb-capa-640.avif 640w, img/tb-capa-1080.avif 1080w, img/tb-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/tb-capa-640.webp 640w, img/tb-capa-1080.webp 1080w, img/tb-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/tb-capa-1440.webp" width="1440" height="1440" alt="Apartamento T | B: Sala, cozinha e quarto em estilo japandi" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">T | B</span><span class="proj-txt"><span class="proj-nome">Apartamento T | B</span><span class="proj-meta">Sala, cozinha e quarto em estilo japandi · Vitória, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="obra" data-cat="residencial"><button class="proj-open" data-proj="pf" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/pf-capa-640.avif 640w, img/pf-capa-1080.avif 1080w, img/pf-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/pf-capa-640.webp 640w, img/pf-capa-1080.webp 1080w, img/pf-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/pf-capa-1440.webp" width="1440" height="1440" alt="Conjunto PF: Casas para venda" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">PF</span><span class="proj-txt"><span class="proj-nome">Conjunto PF</span><span class="proj-meta">Casas para venda · Vila Velha, ES</span></span><span class="chip obra">Obra finalizada</span></span></button></article><article class="proj rv" data-status="obra" data-cat="residencial"><button class="proj-open" data-proj="fl" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/fl-capa-640.avif 640w, img/fl-capa-1080.avif 1080w, img/fl-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/fl-capa-640.webp 640w, img/fl-capa-1080.webp 1080w, img/fl-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/fl-capa-1440.webp" width="1440" height="1920" alt="Casa FL: Cozinha com brasilidade" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">FL</span><span class="proj-txt"><span class="proj-nome">Casa FL</span><span class="proj-meta">Cozinha com brasilidade · Vila Velha, ES</span></span><span class="chip obra">Obra finalizada</span></span></button></article><article class="proj rv" data-status="3d" data-cat="residencial"><button class="proj-open" data-proj="gm" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/gm-capa-640.avif 640w, img/gm-capa-1080.avif 1080w, img/gm-capa-1440.avif 1440w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/gm-capa-640.webp 640w, img/gm-capa-1080.webp 1080w, img/gm-capa-1440.webp 1440w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/gm-capa-1440.webp" width="1440" height="1440" alt="Casas Gêmeas: Fachadas para venda" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">Gêmeas</span><span class="proj-txt"><span class="proj-nome">Casas Gêmeas</span><span class="proj-meta">Fachadas para venda · Vila Velha, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="3d" data-cat="comercial"><button class="proj-open" data-proj="pm" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/pm-capa-640.avif 640w, img/pm-capa-1080.avif 1080w, img/pm-capa-1162.avif 1162w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/pm-capa-640.webp 640w, img/pm-capa-1080.webp 1080w, img/pm-capa-1162.webp 1162w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/pm-capa-1162.webp" width="1162" height="1162" alt="Clínica P | M: Recepção de clínica" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">P | M</span><span class="proj-txt"><span class="proj-nome">Clínica P | M</span><span class="proj-meta">Recepção de clínica · Serra, ES</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="3d" data-cat="comercial"><button class="proj-open" data-proj="joa" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/joa-capa-640.avif 640w, img/joa-capa-1080.avif 1080w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/joa-capa-640.webp 640w, img/joa-capa-1080.webp 1080w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/joa-capa-1080.webp" width="1080" height="1920" alt="Joalheria: Interiores comerciais" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">Joalheria</span><span class="proj-txt"><span class="proj-nome">Joalheria</span><span class="proj-meta">Interiores comerciais</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article><article class="proj rv" data-status="3d" data-cat="comercial"><button class="proj-open" data-proj="bou" aria-haspopup="dialog"><span class="proj-img"><picture><source type="image/avif" srcset="img/bou-capa-640.avif 640w, img/bou-capa-720.avif 720w" sizes="(min-width:900px) 50vw, 100vw"><source type="image/webp" srcset="img/bou-capa-640.webp 640w, img/bou-capa-720.webp 720w" sizes="(min-width:900px) 50vw, 100vw"><img src="img/bou-capa-720.webp" width="720" height="1280" alt="Boutique feminina: Interiores comerciais" loading="lazy" decoding="async"></picture></span><span class="proj-info"><span class="proj-code">Boutique</span><span class="proj-txt"><span class="proj-nome">Boutique feminina</span><span class="proj-meta">Interiores comerciais</span></span><span class="chip 3d">Imagens em 3D</span></span></button></article></div>
+  <p class="nota">Cada projeto indica se as imagens são de obra finalizada ou do projeto em 3D.</p>
+</section>
+
+<section class="processo" id="processo" aria-labelledby="t-proc">
+  <div class="proc-fix">
+    <p class="kicker dark">Como trabalho</p>
+    <h2 id="t-proc" class="rv">O que é aprovado no 3D é o que chega na obra.</h2>
+    <p class="proc-lead rv">Cada etapa prepara a seguinte, para prever complicações e compatibilizar a obra antes de ela começar.</p>
+    <ol class="proc-idx" aria-hidden="true"><li class="on">01 Levantamento</li><li>02 Estudo e 3D</li><li>03 Projeto técnico</li><li>04 Na obra</li></ol>
+  </div>
+  <ol class="passos"><li class="passo rv" data-step="0"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-0-640.avif 640w, img/proc-0-1010.avif 1010w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-0-640.webp 640w, img/proc-0-1010.webp 1010w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-0-1010.webp" width="1010" height="1346" alt="Levantamento" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">01</span><h3>Levantamento</h3><p>Conferir medidas e entender o espaço antes de qualquer traço. Um erro aqui compromete circulação e funcionalidade.</p></div></li><li class="passo rv" data-step="1"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-1-640.avif 640w, img/proc-1-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-1-640.webp 640w, img/proc-1-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-1-1080.webp" width="1440" height="1440" alt="Estudo e 3D" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">02</span><h3>Estudo e 3D</h3><p>Volumes, cores e texturas aparecem na maquete eletrônica, para o cliente enxergar e aprovar o resultado com clareza.</p></div></li><li class="passo rv" data-step="2"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-2-640.avif 640w, img/proc-2-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-2-640.webp 640w, img/proc-2-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-2-1080.webp" width="1440" height="1920" alt="Projeto técnico" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">03</span><h3>Projeto técnico</h3><p>Sem embasamento técnico, o 3D é só imagem. O projeto executivo traduz as escolhas em soluções detalhadas e executáveis.</p></div></li><li class="passo rv" data-step="3"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-3-640.avif 640w, img/proc-3-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-3-640.webp 640w, img/proc-3-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-3-1080.webp" width="1440" height="1440" alt="Na obra" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">04</span><h3>Na obra</h3><p>Conferir de perto se o que foi desenhado está sendo executado. O aprovado no 3D é o que chega na obra, sem improviso.</p></div></li></ol>
+</section>
+
+<section class="reforma" aria-labelledby="t-ref">
+  <div class="ref-txt rv">
+    <p class="kicker">Reforma executada · Airbnb 405</p>
+    <h2 id="t-ref">23 m² que passaram a entregar muito mais.</h2>
+    <p>Divisórias removidas, bancada redesenhada, revestimentos, iluminação e banheiro renovados, numa reforma para locação por temporada na Praia de Itapuã.</p>
+    <button class="btn line" data-proj="a405">Ver a reforma <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="ref-img">
+    <div class="antes"><span class="tag">Antes</span><picture><source type="image/avif" srcset="img/a405-antes-0-640.avif 640w" sizes="(min-width:900px) 16vw, 45vw"><source type="image/webp" srcset="img/a405-antes-0-640.webp 640w" sizes="(min-width:900px) 16vw, 45vw"><img src="img/a405-antes-0-640.webp" width="720" height="1280" alt="Airbnb 405 antes da reforma 1" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="img/a405-antes-1-640.avif 640w" sizes="(min-width:900px) 16vw, 45vw"><source type="image/webp" srcset="img/a405-antes-1-640.webp 640w" sizes="(min-width:900px) 16vw, 45vw"><img src="img/a405-antes-1-640.webp" width="720" height="1280" alt="Airbnb 405 antes da reforma 2" loading="lazy" decoding="async"></picture></div>
+    <div class="depois rv"><span class="tag">Depois</span><picture><source type="image/avif" srcset="img/a405-00-640.avif 640w, img/a405-00-720.avif 720w" sizes="(min-width:900px) 34vw, 100vw"><source type="image/webp" srcset="img/a405-00-640.webp 640w, img/a405-00-720.webp 720w" sizes="(min-width:900px) 34vw, 100vw"><img src="img/a405-00-720.webp" width="720" height="1280" alt="Airbnb 405 depois da reforma" loading="lazy" decoding="async"></picture></div>
+  </div>
+</section>
+
+<section class="escritorio" id="escritorio" aria-labelledby="t-esc">
+  <div class="esc-img rv"><picture><source type="image/avif" srcset="img/regis-retrato-640.avif 640w, img/regis-retrato-1080.avif 1080w" sizes="(min-width:900px) 40vw, 100vw"><source type="image/webp" srcset="img/regis-retrato-640.webp 640w, img/regis-retrato-1080.webp 1080w" sizes="(min-width:900px) 40vw, 100vw"><img src="img/regis-retrato-1080.webp" width="1440" height="1440" alt="Régis Carvalho com o projeto no tablet" loading="lazy" decoding="async"></picture></div>
+  <div class="esc-txt">
+    <p class="kicker dark">À frente do escritório</p>
+    <h2 id="t-esc" class="rv">Régis Carvalho</h2>
+    <p class="rv">Há mais de cinco anos em projetos residenciais e comerciais, fachadas e interiores. Formado em Arquitetura pela Multivix Vila Velha, com pós-graduações em Gestão de Projetos e História da Arte, Master BIM Specialist e pós-graduação em Design de Interiores em andamento.</p>
+    <div class="carvalho rv">
+      <svg class="aneis" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="22"/><circle cx="100" cy="100" r="38"/><circle cx="100" cy="100" r="54"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="86"/></svg>
+      <img src="img/logo-dourado.png" alt="" aria-hidden="true" loading="lazy">
+      <blockquote><p>A marca carrega a imagem de um carvalho, árvore robusta que pode viver por muitos anos e atingir dimensões imensas.</p><cite>Régis, ao apresentar a marca</cite></blockquote>
+    </div>
+    <a class="btn dark" href="https://www.instagram.com/regiscarvalho.arquitetura/" target="_blank" rel="noopener">Acompanhar no Instagram <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+  </div>
+</section>
+
+<section class="depoimentos" id="depoimentos" aria-labelledby="t-dep">
+  <div class="sec-head"><h2 id="t-dep" class="rv"><span class="h-cota" aria-hidden="true"></span>Quem já passou pelo processo</h2>
+  <p class="rv">Mensagens enviadas pelos clientes no WhatsApp, sem edição.</p></div>
+  <div class="deps"><figure class="dep rv"><button class="dep-btn" data-dep="thadeu" aria-label="Ampliar mensagem de Thadeu"><img src="img/dep-thadeu.webp" alt="Mensagem de Thadeu no WhatsApp" loading="lazy" decoding="async"></button><figcaption><strong>Thadeu</strong>Cliente de reforma</figcaption></figure><figure class="dep rv"><button class="dep-btn" data-dep="carol" aria-label="Ampliar mensagem de Carol e Giuliano"><img src="img/dep-carol.webp" alt="Mensagem de Carol e Giuliano no WhatsApp" loading="lazy" decoding="async"></button><figcaption><strong>Carol e Giuliano</strong>Apartamento para Airbnb</figcaption></figure><figure class="dep rv"><button class="dep-btn" data-dep="rejane" aria-label="Ampliar mensagem de Rejane"><img src="img/dep-rejane.webp" alt="Mensagem de Rejane no WhatsApp" loading="lazy" decoding="async"></button><figcaption><strong>Rejane</strong>Cliente por indicação</figcaption></figure></div>
+</section>
+
+<section class="contato" id="contato" aria-labelledby="t-cont">
+  <div class="cont-txt">
+    <p class="kicker">Seu próximo projeto</p>
+    <h2 id="t-cont" class="rv">Conte o que você tem em mente.</h2>
+    <p class="rv">Uma casa nova, uma reforma ou um espaço para o seu negócio. Atendimento presencial em Vila Velha e online.</p>
+    <a class="btn gold big" href="https://wa.me/5527992831871" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg> (27) 99283-1871</a>
+    <a class="ig" href="https://www.instagram.com/regiscarvalho.arquitetura/" target="_blank" rel="noopener">@regiscarvalho.arquitetura</a>
+  </div>
+  <form class="form" id="form" novalidate>
+    <fieldset><legend>Tipo de projeto</legend>
+      <div class="opts">
+        <label><input type="radio" name="tipo" value="Casa do zero"><span>Casa do zero</span></label>
+        <label><input type="radio" name="tipo" value="Reforma"><span>Reforma</span></label>
+        <label><input type="radio" name="tipo" value="Interiores"><span>Interiores</span></label>
+        <label><input type="radio" name="tipo" value="Espaço comercial"><span>Comercial</span></label>
+      </div>
+    </fieldset>
+    <label class="campo"><span>Cidade</span><input name="cidade" autocomplete="address-level2" placeholder="Ex.: Vila Velha"></label>
+    <label class="campo"><span>Em que etapa você está? <em>opcional</em></span><input name="etapa" placeholder="Ex.: tenho o terreno, vou reformar em março"></label>
+    <button class="btn gold" type="submit">Montar mensagem no WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <p class="form-nota">Abre o WhatsApp com a mensagem pronta para você revisar. Nada é enviado sozinho.</p>
+  </form>
+</section>
+</main>
+
+<footer class="rodape">
+  <img src="img/logo-creme.png" width="747" height="155" alt="Regis Carvalho Arquitetura" loading="lazy">
+  <p>Arquitetura e interiores · Vila Velha, ES · Atendimento presencial e online</p>
+  <p><a href="https://wa.me/5527992831871" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.instagram.com/regiscarvalho.arquitetura/" target="_blank" rel="noopener">Instagram</a> · <button class="reduz" aria-pressed="false">Reduzir movimento</button></p>
+  <p class="copy">© 2026 Regis Carvalho</p>
+</footer>
+
+<a class="wa-fixo" href="https://wa.me/5527992831871" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>Conversar pelo WhatsApp</span></a>
+<div class="cursor" aria-hidden="true"><span>Ver projeto</span></div>
+
+<dialog class="pj" id="pj" aria-labelledby="pj-t">
+  <div class="pj-head">
+    <div><span class="pj-code" id="pj-code"></span><h2 id="pj-t"></h2><p id="pj-meta"></p></div>
+    <button class="pj-x" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="pj-track" id="pj-track" tabindex="0" aria-label="Imagens do projeto"></div>
+  <div class="pj-foot">
+    <div class="pj-desc"><span class="chip" id="pj-st"></span><p id="pj-texto"></p><small id="pj-fonte"></small></div>
+    <div class="pj-nav"><span id="pj-n"></span><button class="pj-prev" aria-label="Imagem anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button class="pj-next" aria-label="Próxima imagem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button class="pj-outro">Próximo projeto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+  </div>
+</dialog>
+<dialog class="dz" id="dz"><button class="pj-x" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5"/></svg></button><img id="dz-img" alt=""></dialog>
+<script>(() => {
+const PROJ = {"es": {"code": "E | S", "nome": "Residência E | S", "meta": "Casa do zero, do arquitetônico aos interiores · Vila Velha, ES", "texto": "Uma residência feita do zero. A integração dos ambientes cria fluidez no dia a dia, com iluminação e ventilação natural. Madeira, pedra e cores claras equilibram a casa; o pé-direito duplo amplia, a área externa junta água, fogo e estar.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, posts de 11/04, 23/04, 30/04, 07/06 e 10/06/2026", "fotos": [{"w": "img/es-00-640.webp 640w, img/es-00-1080.webp 1080w, img/es-00-1440.webp 1440w", "a": "img/es-00-640.avif 640w, img/es-00-1080.avif 1080w, img/es-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 1"}, {"w": "img/es-01-640.webp 640w, img/es-01-1080.webp 1080w, img/es-01-1440.webp 1440w", "a": "img/es-01-640.avif 640w, img/es-01-1080.avif 1080w, img/es-01-1440.avif 1440w", "W": 1440, "H": 1317, "alt": "Residência E | S, imagem 2"}, {"w": "img/es-02-640.webp 640w, img/es-02-1080.webp 1080w, img/es-02-1440.webp 1440w", "a": "img/es-02-640.avif 640w, img/es-02-1080.avif 1080w, img/es-02-1440.avif 1440w", "W": 1440, "H": 1317, "alt": "Residência E | S, imagem 3"}, {"w": "img/es-03-640.webp 640w, img/es-03-1080.webp 1080w, img/es-03-1440.webp 1440w", "a": "img/es-03-640.avif 640w, img/es-03-1080.avif 1080w, img/es-03-1440.avif 1440w", "W": 1440, "H": 1317, "alt": "Residência E | S, imagem 4"}, {"w": "img/es-04-640.webp 640w, img/es-04-1080.webp 1080w, img/es-04-1440.webp 1440w", "a": "img/es-04-640.avif 640w, img/es-04-1080.avif 1080w, img/es-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 5"}, {"w": "img/es-05-640.webp 640w, img/es-05-1080.webp 1080w, img/es-05-1440.webp 1440w", "a": "img/es-05-640.avif 640w, img/es-05-1080.avif 1080w, img/es-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 6"}, {"w": "img/es-06-640.webp 640w, img/es-06-1080.webp 1080w, img/es-06-1440.webp 1440w", "a": "img/es-06-640.avif 640w, img/es-06-1080.avif 1080w, img/es-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 7"}, {"w": "img/es-07-640.webp 640w, img/es-07-1080.webp 1080w, img/es-07-1440.webp 1440w", "a": "img/es-07-640.avif 640w, img/es-07-1080.avif 1080w, img/es-07-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 8"}, {"w": "img/es-08-640.webp 640w, img/es-08-1080.webp 1080w, img/es-08-1440.webp 1440w", "a": "img/es-08-640.avif 640w, img/es-08-1080.avif 1080w, img/es-08-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 9"}, {"w": "img/es-09-640.webp 640w, img/es-09-1080.webp 1080w, img/es-09-1440.webp 1440w", "a": "img/es-09-640.avif 640w, img/es-09-1080.avif 1080w, img/es-09-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 10"}, {"w": "img/es-10-640.webp 640w, img/es-10-1080.webp 1080w, img/es-10-1440.webp 1440w", "a": "img/es-10-640.avif 640w, img/es-10-1080.avif 1080w, img/es-10-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 11"}, {"w": "img/es-11-640.webp 640w, img/es-11-1080.webp 1080w, img/es-11-1440.webp 1440w", "a": "img/es-11-640.avif 640w, img/es-11-1080.avif 1080w, img/es-11-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 12"}, {"w": "img/es-12-640.webp 640w, img/es-12-1080.webp 1080w, img/es-12-1440.webp 1440w", "a": "img/es-12-640.avif 640w, img/es-12-1080.avif 1080w, img/es-12-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 13"}, {"w": "img/es-13-640.webp 640w, img/es-13-1080.webp 1080w, img/es-13-1440.webp 1440w", "a": "img/es-13-640.avif 640w, img/es-13-1080.avif 1080w, img/es-13-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 14"}, {"w": "img/es-14-640.webp 640w, img/es-14-1080.webp 1080w, img/es-14-1440.webp 1440w", "a": "img/es-14-640.avif 640w, img/es-14-1080.avif 1080w, img/es-14-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 15"}, {"w": "img/es-15-640.webp 640w, img/es-15-1080.webp 1080w, img/es-15-1440.webp 1440w", "a": "img/es-15-640.avif 640w, img/es-15-1080.avif 1080w, img/es-15-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 16"}, {"w": "img/es-16-640.webp 640w, img/es-16-1080.webp 1080w, img/es-16-1440.webp 1440w", "a": "img/es-16-640.avif 640w, img/es-16-1080.avif 1080w, img/es-16-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 17"}, {"w": "img/es-17-640.webp 640w, img/es-17-1080.webp 1080w, img/es-17-1440.webp 1440w", "a": "img/es-17-640.avif 640w, img/es-17-1080.avif 1080w, img/es-17-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 18"}, {"w": "img/es-18-640.webp 640w, img/es-18-1080.webp 1080w, img/es-18-1440.webp 1440w", "a": "img/es-18-640.avif 640w, img/es-18-1080.avif 1080w, img/es-18-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 19"}, {"w": "img/es-19-640.webp 640w, img/es-19-1080.webp 1080w, img/es-19-1440.webp 1440w", "a": "img/es-19-640.avif 640w, img/es-19-1080.avif 1080w, img/es-19-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 20"}, {"w": "img/es-20-640.webp 640w, img/es-20-1080.webp 1080w, img/es-20-1440.webp 1440w", "a": "img/es-20-640.avif 640w, img/es-20-1080.avif 1080w, img/es-20-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Residência E | S, imagem 21"}, {"w": "img/es-21-640.webp 640w, img/es-21-720.webp 720w", "a": "img/es-21-640.avif 640w, img/es-21-720.avif 720w", "W": 720, "H": 720, "alt": "Residência E | S, imagem 22"}, {"w": "img/es-22-640.webp 640w, img/es-22-1080.webp 1080w, img/es-22-1439.webp 1439w", "a": "img/es-22-640.avif 640w, img/es-22-1080.avif 1080w, img/es-22-1439.avif 1439w", "W": 1439, "H": 959, "alt": "Residência E | S, imagem 23"}, {"w": "img/es-23-640.webp 640w, img/es-23-1080.webp 1080w, img/es-23-1439.webp 1439w", "a": "img/es-23-640.avif 640w, img/es-23-1080.avif 1080w, img/es-23-1439.avif 1439w", "W": 1439, "H": 959, "alt": "Residência E | S, imagem 24"}, {"w": "img/es-24-640.webp 640w, img/es-24-720.webp 720w", "a": "img/es-24-640.avif 640w, img/es-24-720.avif 720w", "W": 720, "H": 480, "alt": "Residência E | S, imagem 25"}], "antes": []}, "aj": {"code": "AJ", "nome": "Cozinha AJ", "meta": "Cozinha com brasilidade · Vila Velha, ES", "texto": "Madeira, granito brasileiro e os tons de azul escolhidos pelo cliente. Uma cozinha pensada a partir do gosto de quem vive nela todos os dias.", "status": "Obra finalizada", "st": "obra", "fonte": "Instagram, posts de 31/05, 02/06 e 05/06/2025 (projeto finalizado)", "fotos": [{"w": "img/aj-00-640.webp 640w, img/aj-00-1080.webp 1080w, img/aj-00-1440.webp 1440w", "a": "img/aj-00-640.avif 640w, img/aj-00-1080.avif 1080w, img/aj-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 1"}, {"w": "img/aj-01-640.webp 640w, img/aj-01-1080.webp 1080w, img/aj-01-1440.webp 1440w", "a": "img/aj-01-640.avif 640w, img/aj-01-1080.avif 1080w, img/aj-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 2"}, {"w": "img/aj-02-640.webp 640w, img/aj-02-1080.webp 1080w, img/aj-02-1440.webp 1440w", "a": "img/aj-02-640.avif 640w, img/aj-02-1080.avif 1080w, img/aj-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 3"}, {"w": "img/aj-03-640.webp 640w, img/aj-03-1080.webp 1080w, img/aj-03-1440.webp 1440w", "a": "img/aj-03-640.avif 640w, img/aj-03-1080.avif 1080w, img/aj-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 4"}, {"w": "img/aj-04-640.webp 640w, img/aj-04-1080.webp 1080w, img/aj-04-1440.webp 1440w", "a": "img/aj-04-640.avif 640w, img/aj-04-1080.avif 1080w, img/aj-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 5"}, {"w": "img/aj-05-640.webp 640w, img/aj-05-1080.webp 1080w, img/aj-05-1440.webp 1440w", "a": "img/aj-05-640.avif 640w, img/aj-05-1080.avif 1080w, img/aj-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 6"}, {"w": "img/aj-06-640.webp 640w, img/aj-06-1080.webp 1080w, img/aj-06-1440.webp 1440w", "a": "img/aj-06-640.avif 640w, img/aj-06-1080.avif 1080w, img/aj-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 7"}, {"w": "img/aj-07-640.webp 640w, img/aj-07-1080.webp 1080w, img/aj-07-1440.webp 1440w", "a": "img/aj-07-640.avif 640w, img/aj-07-1080.avif 1080w, img/aj-07-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha AJ, imagem 8"}], "antes": []}, "jm": {"code": "J | M", "nome": "Chalé J | M", "meta": "Chalé com 92 m² em dois pavimentos · Brejetuba, ES", "texto": "Um chalé pequeno em dimensões, com deck externo e área gourmet, para um casal receber filhos e netos. A fachada foi adaptada ao gosto dos clientes até chegar ao traço final.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, post de 19/02/2025", "fotos": [{"w": "img/jm-00-640.webp 640w, img/jm-00-720.webp 720w", "a": "img/jm-00-640.avif 640w, img/jm-00-720.avif 720w", "W": 720, "H": 720, "alt": "Chalé J | M, imagem 1"}, {"w": "img/jm-01-640.webp 640w, img/jm-01-1080.webp 1080w, img/jm-01-1440.webp 1440w", "a": "img/jm-01-640.avif 640w, img/jm-01-1080.avif 1080w, img/jm-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 2"}, {"w": "img/jm-02-640.webp 640w, img/jm-02-1080.webp 1080w, img/jm-02-1440.webp 1440w", "a": "img/jm-02-640.avif 640w, img/jm-02-1080.avif 1080w, img/jm-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 3"}, {"w": "img/jm-03-640.webp 640w, img/jm-03-1080.webp 1080w, img/jm-03-1440.webp 1440w", "a": "img/jm-03-640.avif 640w, img/jm-03-1080.avif 1080w, img/jm-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 4"}, {"w": "img/jm-04-640.webp 640w, img/jm-04-1080.webp 1080w, img/jm-04-1440.webp 1440w", "a": "img/jm-04-640.avif 640w, img/jm-04-1080.avif 1080w, img/jm-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 5"}, {"w": "img/jm-05-640.webp 640w, img/jm-05-1080.webp 1080w, img/jm-05-1440.webp 1440w", "a": "img/jm-05-640.avif 640w, img/jm-05-1080.avif 1080w, img/jm-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 6"}, {"w": "img/jm-06-640.webp 640w, img/jm-06-1080.webp 1080w, img/jm-06-1440.webp 1440w", "a": "img/jm-06-640.avif 640w, img/jm-06-1080.avif 1080w, img/jm-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 7"}, {"w": "img/jm-07-640.webp 640w, img/jm-07-1080.webp 1080w, img/jm-07-1440.webp 1440w", "a": "img/jm-07-640.avif 640w, img/jm-07-1080.avif 1080w, img/jm-07-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Chalé J | M, imagem 8"}], "antes": []}, "ae": {"code": "A | E", "nome": "Casa A | E", "meta": "Releitura contemporânea da casa brasileira · Vila Velha, ES", "texto": "Volumes ortogonais e precisos respondidos por um paisagismo de sombra e textura. Por dentro, paleta terrosa, madeira e luz quente para uma casa funcional e sem excessos.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, posts de 26/02 e 21/03/2026", "fotos": [{"w": "img/ae-00-640.webp 640w, img/ae-00-1080.webp 1080w, img/ae-00-1440.webp 1440w", "a": "img/ae-00-640.avif 640w, img/ae-00-1080.avif 1080w, img/ae-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 1"}, {"w": "img/ae-01-640.webp 640w, img/ae-01-1080.webp 1080w, img/ae-01-1440.webp 1440w", "a": "img/ae-01-640.avif 640w, img/ae-01-1080.avif 1080w, img/ae-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 2"}, {"w": "img/ae-02-640.webp 640w, img/ae-02-1080.webp 1080w, img/ae-02-1440.webp 1440w", "a": "img/ae-02-640.avif 640w, img/ae-02-1080.avif 1080w, img/ae-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 3"}, {"w": "img/ae-03-640.webp 640w, img/ae-03-1080.webp 1080w, img/ae-03-1440.webp 1440w", "a": "img/ae-03-640.avif 640w, img/ae-03-1080.avif 1080w, img/ae-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 4"}, {"w": "img/ae-04-640.webp 640w, img/ae-04-1080.webp 1080w, img/ae-04-1440.webp 1440w", "a": "img/ae-04-640.avif 640w, img/ae-04-1080.avif 1080w, img/ae-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 5"}, {"w": "img/ae-05-640.webp 640w, img/ae-05-1080.webp 1080w, img/ae-05-1440.webp 1440w", "a": "img/ae-05-640.avif 640w, img/ae-05-1080.avif 1080w, img/ae-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 6"}, {"w": "img/ae-06-640.webp 640w, img/ae-06-1080.webp 1080w, img/ae-06-1440.webp 1440w", "a": "img/ae-06-640.avif 640w, img/ae-06-1080.avif 1080w, img/ae-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 7"}, {"w": "img/ae-07-640.webp 640w, img/ae-07-1080.webp 1080w, img/ae-07-1440.webp 1440w", "a": "img/ae-07-640.avif 640w, img/ae-07-1080.avif 1080w, img/ae-07-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 8"}, {"w": "img/ae-08-640.webp 640w, img/ae-08-1080.webp 1080w, img/ae-08-1440.webp 1440w", "a": "img/ae-08-640.avif 640w, img/ae-08-1080.avif 1080w, img/ae-08-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casa A | E, imagem 9"}], "antes": []}, "bl": {"code": "BL", "nome": "Cozinha BL", "meta": "Reforma de cozinha e lavabo · Vila Velha, ES", "texto": "Da maquete 3D ao detalhamento técnico e à obra: remoção do piso, novos pontos elétricos, iluminação e marcenaria. O resultado acompanhou o que foi planejado no 3D.", "status": "Obra finalizada", "st": "obra", "fonte": "Instagram, posts de 24/12 e 31/12/2024 (projeto finalizado)", "fotos": [{"w": "img/bl-00-640.webp 640w, img/bl-00-1080.webp 1080w, img/bl-00-1440.webp 1440w", "a": "img/bl-00-640.avif 640w, img/bl-00-1080.avif 1080w, img/bl-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha BL, imagem 1"}, {"w": "img/bl-01-640.webp 640w, img/bl-01-1080.webp 1080w, img/bl-01-1440.webp 1440w", "a": "img/bl-01-640.avif 640w, img/bl-01-1080.avif 1080w, img/bl-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha BL, imagem 2"}, {"w": "img/bl-02-640.webp 640w, img/bl-02-1080.webp 1080w, img/bl-02-1440.webp 1440w", "a": "img/bl-02-640.avif 640w, img/bl-02-1080.avif 1080w, img/bl-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha BL, imagem 3"}, {"w": "img/bl-03-640.webp 640w, img/bl-03-1080.webp 1080w, img/bl-03-1440.webp 1440w", "a": "img/bl-03-640.avif 640w, img/bl-03-1080.avif 1080w, img/bl-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha BL, imagem 4"}, {"w": "img/bl-04-640.webp 640w, img/bl-04-1080.webp 1080w, img/bl-04-1440.webp 1440w", "a": "img/bl-04-640.avif 640w, img/bl-04-1080.avif 1080w, img/bl-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Cozinha BL, imagem 5"}], "antes": []}, "a405": {"code": "405", "nome": "Airbnb 405", "meta": "Reforma para locação por temporada, 23 m² · Praia de Itapuã, Vila Velha", "texto": "Divisórias removidas, bancada redesenhada, revestimentos, iluminação e banheiro renovados. A arquitetura não aumentou os 23 m², fez esses 23 m² entregarem mais.", "status": "Obra finalizada", "st": "obra", "fonte": "Instagram, vídeo de 07/09/2026 (quadros do vídeo)", "fotos": [{"w": "img/a405-00-640.webp 640w, img/a405-00-720.webp 720w", "a": "img/a405-00-640.avif 640w, img/a405-00-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 1"}, {"w": "img/a405-01-640.webp 640w, img/a405-01-720.webp 720w", "a": "img/a405-01-640.avif 640w, img/a405-01-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 2"}, {"w": "img/a405-02-640.webp 640w, img/a405-02-720.webp 720w", "a": "img/a405-02-640.avif 640w, img/a405-02-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 3"}, {"w": "img/a405-03-640.webp 640w, img/a405-03-720.webp 720w", "a": "img/a405-03-640.avif 640w, img/a405-03-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 4"}, {"w": "img/a405-04-640.webp 640w, img/a405-04-720.webp 720w", "a": "img/a405-04-640.avif 640w, img/a405-04-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 5"}, {"w": "img/a405-05-640.webp 640w, img/a405-05-720.webp 720w", "a": "img/a405-05-640.avif 640w, img/a405-05-720.avif 720w", "W": 720, "H": 1280, "alt": "Airbnb 405, imagem 6"}], "antes": [{"w": "img/a405-antes-0-640.webp 640w", "a": "img/a405-antes-0-640.avif 640w", "W": 720, "H": 1280, "alt": "Airbnb 405, antes da reforma 1"}, {"w": "img/a405-antes-1-640.webp 640w", "a": "img/a405-antes-1-640.avif 640w", "W": 720, "H": 1280, "alt": "Airbnb 405, antes da reforma 2"}]}, "tb": {"code": "T | B", "nome": "Apartamento T | B", "meta": "Sala, cozinha e quarto em estilo japandi · Vitória, ES", "texto": "Tons claros com contrastes pontuais, pedido do cliente porque a futura moradora tem baixa visão. Paleta neutra, madeira natural e iluminação pensadas para acessibilidade e conforto visual.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, posts de 15/07, 25/07 e 30/07/2025", "fotos": [{"w": "img/tb-00-640.webp 640w, img/tb-00-1080.webp 1080w, img/tb-00-1440.webp 1440w", "a": "img/tb-00-640.avif 640w, img/tb-00-1080.avif 1080w, img/tb-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 1"}, {"w": "img/tb-01-640.webp 640w, img/tb-01-1080.webp 1080w, img/tb-01-1440.webp 1440w", "a": "img/tb-01-640.avif 640w, img/tb-01-1080.avif 1080w, img/tb-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 2"}, {"w": "img/tb-02-640.webp 640w, img/tb-02-1080.webp 1080w, img/tb-02-1440.webp 1440w", "a": "img/tb-02-640.avif 640w, img/tb-02-1080.avif 1080w, img/tb-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 3"}, {"w": "img/tb-03-640.webp 640w, img/tb-03-1080.webp 1080w, img/tb-03-1440.webp 1440w", "a": "img/tb-03-640.avif 640w, img/tb-03-1080.avif 1080w, img/tb-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 4"}, {"w": "img/tb-04-640.webp 640w, img/tb-04-1080.webp 1080w, img/tb-04-1440.webp 1440w", "a": "img/tb-04-640.avif 640w, img/tb-04-1080.avif 1080w, img/tb-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 5"}, {"w": "img/tb-05-640.webp 640w, img/tb-05-1080.webp 1080w, img/tb-05-1440.webp 1440w", "a": "img/tb-05-640.avif 640w, img/tb-05-1080.avif 1080w, img/tb-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 6"}, {"w": "img/tb-06-640.webp 640w, img/tb-06-1080.webp 1080w, img/tb-06-1440.webp 1440w", "a": "img/tb-06-640.avif 640w, img/tb-06-1080.avif 1080w, img/tb-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 7"}, {"w": "img/tb-07-640.webp 640w, img/tb-07-1080.webp 1080w, img/tb-07-1440.webp 1440w", "a": "img/tb-07-640.avif 640w, img/tb-07-1080.avif 1080w, img/tb-07-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 8"}, {"w": "img/tb-08-640.webp 640w, img/tb-08-1080.webp 1080w, img/tb-08-1440.webp 1440w", "a": "img/tb-08-640.avif 640w, img/tb-08-1080.avif 1080w, img/tb-08-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 9"}, {"w": "img/tb-09-640.webp 640w, img/tb-09-1080.webp 1080w, img/tb-09-1440.webp 1440w", "a": "img/tb-09-640.avif 640w, img/tb-09-1080.avif 1080w, img/tb-09-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 10"}, {"w": "img/tb-10-640.webp 640w, img/tb-10-1080.webp 1080w, img/tb-10-1440.webp 1440w", "a": "img/tb-10-640.avif 640w, img/tb-10-1080.avif 1080w, img/tb-10-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 11"}, {"w": "img/tb-11-640.webp 640w, img/tb-11-1080.webp 1080w, img/tb-11-1440.webp 1440w", "a": "img/tb-11-640.avif 640w, img/tb-11-1080.avif 1080w, img/tb-11-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 12"}, {"w": "img/tb-12-640.webp 640w, img/tb-12-1080.webp 1080w, img/tb-12-1440.webp 1440w", "a": "img/tb-12-640.avif 640w, img/tb-12-1080.avif 1080w, img/tb-12-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 13"}, {"w": "img/tb-13-640.webp 640w, img/tb-13-1080.webp 1080w, img/tb-13-1440.webp 1440w", "a": "img/tb-13-640.avif 640w, img/tb-13-1080.avif 1080w, img/tb-13-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 14"}, {"w": "img/tb-14-640.webp 640w, img/tb-14-1080.webp 1080w, img/tb-14-1440.webp 1440w", "a": "img/tb-14-640.avif 640w, img/tb-14-1080.avif 1080w, img/tb-14-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 15"}, {"w": "img/tb-15-640.webp 640w, img/tb-15-1080.webp 1080w, img/tb-15-1440.webp 1440w", "a": "img/tb-15-640.avif 640w, img/tb-15-1080.avif 1080w, img/tb-15-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Apartamento T | B, imagem 16"}], "antes": []}, "pf": {"code": "PF", "nome": "Conjunto PF", "meta": "Casas para venda · Vila Velha, ES", "texto": "Um conjunto de casas pensado para chamar a atenção e ajudar na venda. Ajustes para normas da prefeitura e orçamento, com a ideia inicial mantida até o fim.", "status": "Obra finalizada", "st": "obra", "fonte": "Instagram, post de 25/01/2025 (projeto finalizado)", "fotos": [{"w": "img/pf-00-640.webp 640w, img/pf-00-1080.webp 1080w, img/pf-00-1440.webp 1440w", "a": "img/pf-00-640.avif 640w, img/pf-00-1080.avif 1080w, img/pf-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Conjunto PF, imagem 1"}, {"w": "img/pf-01-640.webp 640w, img/pf-01-1080.webp 1080w, img/pf-01-1440.webp 1440w", "a": "img/pf-01-640.avif 640w, img/pf-01-1080.avif 1080w, img/pf-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Conjunto PF, imagem 2"}, {"w": "img/pf-02-640.webp 640w, img/pf-02-1080.webp 1080w, img/pf-02-1440.webp 1440w", "a": "img/pf-02-640.avif 640w, img/pf-02-1080.avif 1080w, img/pf-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Conjunto PF, imagem 3"}, {"w": "img/pf-03-640.webp 640w, img/pf-03-1080.webp 1080w, img/pf-03-1440.webp 1440w", "a": "img/pf-03-640.avif 640w, img/pf-03-1080.avif 1080w, img/pf-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Conjunto PF, imagem 4"}, {"w": "img/pf-04-640.webp 640w, img/pf-04-1080.webp 1080w, img/pf-04-1440.webp 1440w", "a": "img/pf-04-640.avif 640w, img/pf-04-1080.avif 1080w, img/pf-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Conjunto PF, imagem 5"}], "antes": []}, "fl": {"code": "FL", "nome": "Casa FL", "meta": "Cozinha com brasilidade · Vila Velha, ES", "texto": "O calor da madeira com a neutralidade do granito branco siena, revestimentos brancos que ampliam a luz da manhã e prateleiras abertas para dar personalidade.", "status": "Obra finalizada", "st": "obra", "fonte": "Instagram, posts de 05/08 e 11/08/2025 (projeto finalizado)", "fotos": [{"w": "img/fl-00-640.webp 640w, img/fl-00-1080.webp 1080w, img/fl-00-1440.webp 1440w", "a": "img/fl-00-640.avif 640w, img/fl-00-1080.avif 1080w, img/fl-00-1440.avif 1440w", "W": 1440, "H": 1920, "alt": "Casa FL, imagem 1"}, {"w": "img/fl-01-640.webp 640w, img/fl-01-1080.webp 1080w, img/fl-01-1440.webp 1440w", "a": "img/fl-01-640.avif 640w, img/fl-01-1080.avif 1080w, img/fl-01-1440.avif 1440w", "W": 1440, "H": 1920, "alt": "Casa FL, imagem 2"}], "antes": []}, "gm": {"code": "Gêmeas", "nome": "Casas Gêmeas", "meta": "Fachadas para venda · Vila Velha, ES", "texto": "Linhas limpas, volumes que se encaixam e o cobogó numa leitura geométrica, filtrando luz e ventilação sem abrir mão da privacidade.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, posts de 24/05, 26/05 e 29/05/2025", "fotos": [{"w": "img/gm-00-640.webp 640w, img/gm-00-1080.webp 1080w, img/gm-00-1440.webp 1440w", "a": "img/gm-00-640.avif 640w, img/gm-00-1080.avif 1080w, img/gm-00-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 1"}, {"w": "img/gm-01-640.webp 640w, img/gm-01-1080.webp 1080w, img/gm-01-1440.webp 1440w", "a": "img/gm-01-640.avif 640w, img/gm-01-1080.avif 1080w, img/gm-01-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 2"}, {"w": "img/gm-02-640.webp 640w, img/gm-02-1080.webp 1080w, img/gm-02-1440.webp 1440w", "a": "img/gm-02-640.avif 640w, img/gm-02-1080.avif 1080w, img/gm-02-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 3"}, {"w": "img/gm-03-640.webp 640w, img/gm-03-1080.webp 1080w, img/gm-03-1440.webp 1440w", "a": "img/gm-03-640.avif 640w, img/gm-03-1080.avif 1080w, img/gm-03-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 4"}, {"w": "img/gm-04-640.webp 640w, img/gm-04-1080.webp 1080w, img/gm-04-1440.webp 1440w", "a": "img/gm-04-640.avif 640w, img/gm-04-1080.avif 1080w, img/gm-04-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 5"}, {"w": "img/gm-05-640.webp 640w, img/gm-05-1080.webp 1080w, img/gm-05-1440.webp 1440w", "a": "img/gm-05-640.avif 640w, img/gm-05-1080.avif 1080w, img/gm-05-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 6"}, {"w": "img/gm-06-640.webp 640w, img/gm-06-1080.webp 1080w, img/gm-06-1440.webp 1440w", "a": "img/gm-06-640.avif 640w, img/gm-06-1080.avif 1080w, img/gm-06-1440.avif 1440w", "W": 1440, "H": 1440, "alt": "Casas Gêmeas, imagem 7"}, {"w": "img/gm-07-640.webp 640w, img/gm-07-1080.webp 1080w, img/gm-07-1439.webp 1439w", "a": "img/gm-07-640.avif 640w, img/gm-07-1080.avif 1080w, img/gm-07-1439.avif 1439w", "W": 1439, "H": 1440, "alt": "Casas Gêmeas, imagem 8"}, {"w": "img/gm-08-640.webp 640w, img/gm-08-1080.webp 1080w, img/gm-08-1439.webp 1439w", "a": "img/gm-08-640.avif 640w, img/gm-08-1080.avif 1080w, img/gm-08-1439.avif 1439w", "W": 1439, "H": 1440, "alt": "Casas Gêmeas, imagem 9"}, {"w": "img/gm-09-640.webp 640w, img/gm-09-1080.webp 1080w, img/gm-09-1439.webp 1439w", "a": "img/gm-09-640.avif 640w, img/gm-09-1080.avif 1080w, img/gm-09-1439.avif 1439w", "W": 1439, "H": 1440, "alt": "Casas Gêmeas, imagem 10"}, {"w": "img/gm-10-640.webp 640w, img/gm-10-1080.webp 1080w, img/gm-10-1439.webp 1439w", "a": "img/gm-10-640.avif 640w, img/gm-10-1080.avif 1080w, img/gm-10-1439.avif 1439w", "W": 1439, "H": 1440, "alt": "Casas Gêmeas, imagem 11"}], "antes": []}, "pm": {"code": "P | M", "nome": "Clínica P | M", "meta": "Recepção de clínica · Serra, ES", "texto": "Paleta neutra, texturas naturais e iluminação indireta para uma recepção acolhedora e funcional logo na chegada.", "status": "Imagens em 3D", "st": "3d", "fonte": "Instagram, posts de 18/05, 19/05 e 20/05/2025", "fotos": [{"w": "img/pm-00-640.webp 640w, img/pm-00-1080.webp 1080w, img/pm-00-1162.webp 1162w", "a": "img/pm-00-640.avif 640w, img/pm-00-1080.avif 1080w, img/pm-00-1162.avif 1162w", "W": 1162, "H": 1162, "alt": "Clínica P | M, imagem 1"}, {"w": "img/pm-01-640.webp 640w, img/pm-01-1080.webp 1080w, img/pm-01-1440.webp 1440w", "a": "img/pm-01-640.avif 640w, img/pm-01-1080.avif 1080w, img/pm-01-1440.avif 1440w", "W": 1440, "H": 1799, "alt": "Clínica P | M, imagem 2"}, {"w": "img/pm-02-640.webp 640w, img/pm-02-1080.webp 1080w, img/pm-02-1162.webp 1162w", "a": "img/pm-02-640.avif 640w, img/pm-02-1080.avif 1080w, img/pm-02-1162.avif 1162w", "W": 1162, "H": 1162, "alt": "Clínica P | M, imagem 3"}, {"w": "img/pm-03-640.webp 640w, img/pm-03-1080.webp 1080w, img/pm-03-1162.webp 1162w", "a": "img/pm-03-640.avif 640w, img/pm-03-1080.avif 1080w, img/pm-03-1162.avif 1162w", "W": 1162, "H": 1162, "alt": "Clínica P | M, imagem 4"}, {"w": "img/pm-04-640.webp 640w, img/pm-04-1080.webp 1080w, img/pm-04-1227.webp 1227w", "a": "img/pm-04-640.avif 640w, img/pm-04-1080.avif 1080w, img/pm-04-1227.avif 1227w", "W": 1227, "H": 1162, "alt": "Clínica P | M, imagem 5"}], "antes": []}, "joa": {"code": "Joalheria", "nome": "Joalheria", "meta": "Interiores comerciais", "texto": "Um espaço de atendimento pensado em torno das peças. Expositores, bancada e iluminação desenham uma composição acolhedora, com tons suaves e marcenaria.", "status": "Imagens em 3D", "st": "3d", "fonte": "Vídeo enviado pelo Régis em 22/09/2026", "fotos": [{"w": "img/joa-00-640.webp 640w, img/joa-00-1080.webp 1080w", "a": "img/joa-00-640.avif 640w, img/joa-00-1080.avif 1080w", "W": 1080, "H": 1920, "alt": "Joalheria, imagem 1"}, {"w": "img/joa-01-640.webp 640w, img/joa-01-1080.webp 1080w", "a": "img/joa-01-640.avif 640w, img/joa-01-1080.avif 1080w", "W": 1080, "H": 1920, "alt": "Joalheria, imagem 2"}, {"w": "img/joa-02-640.webp 640w, img/joa-02-1080.webp 1080w", "a": "img/joa-02-640.avif 640w, img/joa-02-1080.avif 1080w", "W": 1080, "H": 1920, "alt": "Joalheria, imagem 3"}, {"w": "img/joa-03-640.webp 640w, img/joa-03-1080.webp 1080w", "a": "img/joa-03-640.avif 640w, img/joa-03-1080.avif 1080w", "W": 1080, "H": 1920, "alt": "Joalheria, imagem 4"}], "antes": []}, "bou": {"code": "Boutique", "nome": "Boutique feminina", "meta": "Interiores comerciais", "texto": "Arcos, texturas claras e tons rosados dão unidade à proposta, que organiza exposição, circulação, provadores e atendimento no mesmo ambiente.", "status": "Imagens em 3D", "st": "3d", "fonte": "Vídeo enviado pelo Régis em 22/09/2026", "fotos": [{"w": "img/bou-00-640.webp 640w, img/bou-00-720.webp 720w", "a": "img/bou-00-640.avif 640w, img/bou-00-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 1"}, {"w": "img/bou-01-640.webp 640w, img/bou-01-720.webp 720w", "a": "img/bou-01-640.avif 640w, img/bou-01-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 2"}, {"w": "img/bou-02-640.webp 640w, img/bou-02-720.webp 720w", "a": "img/bou-02-640.avif 640w, img/bou-02-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 3"}, {"w": "img/bou-03-640.webp 640w, img/bou-03-720.webp 720w", "a": "img/bou-03-640.avif 640w, img/bou-03-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 4"}, {"w": "img/bou-04-640.webp 640w, img/bou-04-720.webp 720w", "a": "img/bou-04-640.avif 640w, img/bou-04-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 5"}, {"w": "img/bou-05-640.webp 640w, img/bou-05-720.webp 720w", "a": "img/bou-05-640.avif 640w, img/bou-05-720.avif 720w", "W": 720, "H": 1280, "alt": "Boutique feminina, imagem 6"}], "antes": []}}, WA = '5527992831871';
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const root = document.documentElement;
+const mq = matchMedia('(prefers-reduced-motion: reduce)');
+let reduz = mq.matches;
+try { if (localStorage.getItem('rc-reduz') === '1') reduz = true; } catch (e) {}
+const setReduz = v => { reduz = v; root.classList.toggle('reduzido', v); $('.reduz').setAttribute('aria-pressed', v); $('.reduz').textContent = v ? 'Ativar movimento' : 'Reduzir movimento'; try { localStorage.setItem('rc-reduz', v ? '1' : '0'); } catch (e) {} if (v) parar(); else iniciar(); };
+
+/* topo e menu */
+const top = $('.top'), hero = $('.hero'), wa = $('.wa-fixo');
+const onScroll = () => { const y = scrollY, h = hero.offsetHeight; top.classList.toggle('solid', y > h - 80); wa.classList.toggle('on', y > h * .7 && y < document.body.scrollHeight - innerHeight - 260); };
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const mb = $('.menu-btn'), menu = $('#menu');
+mb.addEventListener('click', () => { const o = mb.getAttribute('aria-expanded') !== 'true'; mb.setAttribute('aria-expanded', o); menu.hidden = !o; top.classList.toggle('menu-open', o); document.body.style.overflow = o ? 'hidden' : ''; });
+$$('a', menu).forEach(a => a.addEventListener('click', () => mb.click()));
+
+/* abertura: slides com cota de progresso */
+const slides = $$('.slide'), dots = $$('.dot'), fill = $('.cota-fill'), pauseBtn = $('.pause');
+let cur = 0, timer = null, t0 = 0, raf = 0, pausado = false, visivel = true;
+const DUR = 6500;
+const ir = i => { slides[cur].classList.remove('on'); dots[cur].classList.remove('on'); cur = (i + slides.length) % slides.length; const img = $('img', slides[cur]); if (img.loading === 'lazy') img.loading = 'eager'; slides[cur].classList.add('on'); dots[cur].classList.add('on'); t0 = performance.now(); };
+const tick = now => { if (pausado || reduz || !visivel) { raf = 0; return; } const p = Math.min((now - t0) / DUR, 1); fill.style.transform = `scaleX(${p})`; if (p >= 1) ir(cur + 1); raf = requestAnimationFrame(tick); };
+function iniciar() { if (reduz || pausado) return; t0 = performance.now(); if (!raf) raf = requestAnimationFrame(tick); }
+function parar() { cancelAnimationFrame(raf); raf = 0; fill.style.transform = reduz ? 'scaleX(0)' : fill.style.transform; }
+dots.forEach(d => d.addEventListener('click', () => { ir(+d.dataset.go); fill.style.transform = 'scaleX(0)'; iniciar(); }));
+const setPause = v => { pausado = v; pauseBtn.setAttribute('aria-pressed', v); pauseBtn.setAttribute('aria-label', v ? 'Continuar imagens' : 'Pausar imagens'); pauseBtn.innerHTML = v ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.6"/></svg>'; v ? parar() : iniciar(); };
+pauseBtn.addEventListener('click', () => setPause(!pausado));
+new IntersectionObserver(e => { visivel = e[0].isIntersecting; visivel ? iniciar() : parar(); }).observe(hero);
+document.addEventListener('visibilitychange', () => { visivel = !document.hidden; visivel ? iniciar() : parar(); });
+// pré-carrega os slides seguintes depois do load, sem disputar com a primeira imagem
+addEventListener('load', () => setTimeout(() => slides.slice(1).forEach(s => { const i = $('img', s); i.loading = 'eager'; }), 1200));
+
+/* revelação ao rolar */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+$$('.rv, .passo, .carvalho').forEach(el => io.observe(el));
+
+/* projetos no celular ganham cor ao passar pelo centro */
+if (matchMedia('(pointer: coarse)').matches) {
+  const vio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('vivo', e.isIntersecting)), { rootMargin: '-35% 0px -35% 0px' });
+  $$('.proj').forEach(p => vio.observe(p));
+}
+
+/* processo: índice acompanha a etapa visível */
+const idx = $$('.proc-idx li');
+const pio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) idx.forEach((li, i) => li.classList.toggle('on', i === +e.target.dataset.step)); }), { rootMargin: '-45% 0px -45% 0px' });
+$$('.passo').forEach(p => pio.observe(p));
+
+/* filtros */
+$$('.f').forEach(b => b.addEventListener('click', () => {
+  $$('.f').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+  const f = b.dataset.f;
+  $$('.proj').forEach(p => { const ok = f === 'todos' || p.dataset.status === f || p.dataset.cat === f; p.classList.toggle('fora', !ok); if (ok) { p.classList.remove('vis'); requestAnimationFrame(() => requestAnimationFrame(() => p.classList.add('vis'))); } });
+  // com filtro, nenhum card ocupa a linha inteira sozinho
+  $$('.proj').forEach(p => p.classList.toggle('feat', f === 'todos' && p.dataset.feat === '1'));
+}));
+$$('.proj.feat').forEach(p => p.dataset.feat = '1');
+
+/* cursor sobre os projetos (só mouse) */
+const cur$ = $('.cursor');
+if (matchMedia('(pointer: fine)').matches) {
+  let cx = 0, cy = 0, x = 0, y = 0, on = false, r2 = 0;
+  const loop = () => { x += (cx - x) * .2; y += (cy - y) * .2; cur$.style.left = x + 'px'; cur$.style.top = y + 'px'; r2 = on ? requestAnimationFrame(loop) : 0; };
+  $$('.proj-open').forEach(b => { b.addEventListener('pointerenter', e => { on = true; x = cx = e.clientX; y = cy = e.clientY; cur$.classList.add('on'); if (!r2) loop(); }); b.addEventListener('pointerleave', () => { on = false; cur$.classList.remove('on'); }); b.addEventListener('pointermove', e => { cx = e.clientX; cy = e.clientY; }); });
+} else cur$.remove();
+
+/* diálogo do projeto */
+const pj = $('#pj'), track = $('#pj-track'), ordem = Object.keys(PROJ);
+let atual = null, volta = null;
+const src = (f, sizes) => `<picture><source type="image/avif" srcset="${f.a}" sizes="${sizes}"><source type="image/webp" srcset="${f.w}" sizes="${sizes}"><img src="${f.w.split(', ').pop().split(' ')[0]}" width="${f.W}" height="${f.H}" alt="${f.alt}" decoding="async"></picture>`;
+const abrir = (slug, origem) => {
+  const p = PROJ[slug]; atual = slug;
+  $('#pj-code').textContent = p.code; $('#pj-t').textContent = p.nome; $('#pj-meta').textContent = p.meta;
+  $('#pj-st').textContent = p.status; $('#pj-st').className = 'chip ' + p.st; $('#pj-texto').textContent = p.texto; $('#pj-fonte').textContent = 'Fonte: ' + p.fonte;
+  const sz = innerWidth < 640 ? '86vw' : '60vw';
+  track.innerHTML = p.fotos.map(f => `<figure style="aspect-ratio:${f.W}/${f.H}">${src(f, sz)}</figure>`).join('') + (p.antes || []).map(f => `<figure class="antes-fig" style="aspect-ratio:${f.W}/${f.H}">${src(f, '40vw')}<figcaption>Antes</figcaption></figure>`).join('');
+  track.scrollLeft = 0; requestAnimationFrame(conta);
+  if (!pj.open) { volta = origem || document.activeElement; pj.showModal(); document.body.style.overflow = 'hidden'; }
+  $('.pj-x', pj).focus();
+};
+const pad = () => parseFloat(getComputedStyle(track).paddingLeft) || 0;
+const idxAtual = () => { const figs = $$('figure', track); const x = track.scrollLeft + pad(); let k = 0, d = 1e9; figs.forEach((f, i) => { const dd = Math.abs(f.offsetLeft - x); if (dd < d) { d = dd; k = i; } }); return k; };
+const conta = () => { const figs = $$('figure', track); if (!figs.length) return; const fim = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; $('#pj-n').textContent = `${fim ? figs.length : idxAtual() + 1} / ${figs.length}`; };
+track.addEventListener('scroll', () => requestAnimationFrame(conta), { passive: true });
+const passo = d => { const figs = $$('figure', track); const alvo = figs[Math.max(0, Math.min(figs.length - 1, idxAtual() + d))]; track.scrollTo({ left: alvo.offsetLeft - pad(), behavior: reduz ? 'auto' : 'smooth' }); };
+$('.pj-prev').addEventListener('click', () => passo(-1)); $('.pj-next').addEventListener('click', () => passo(1));
+$('.pj-outro').addEventListener('click', () => abrir(ordem[(ordem.indexOf(atual) + 1) % ordem.length]));
+pj.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); passo(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); passo(-1); } });
+const fechar = () => { pj.close(); };
+$('.pj-x', pj).addEventListener('click', fechar);
+pj.addEventListener('close', () => { document.body.style.overflow = ''; track.innerHTML = ''; if (volta) volta.focus(); });
+$$('[data-proj]').forEach(b => b.addEventListener('click', () => abrir(b.dataset.proj, b)));
+
+/* depoimentos ampliados */
+const dz = $('#dz');
+$$('.dep-btn').forEach(b => b.addEventListener('click', () => { const i = $('img', b); $('#dz-img').src = i.src; $('#dz-img').alt = i.alt; volta = b; dz.showModal(); $('.pj-x', dz).focus(); }));
+$('.pj-x', dz).addEventListener('click', () => dz.close());
+dz.addEventListener('click', e => { if (e.target === dz) dz.close(); });
+dz.addEventListener('close', () => volta && volta.focus());
+
+/* formulário: só prepara a mensagem */
+$('#form').addEventListener('submit', e => {
+  e.preventDefault(); const f = new FormData(e.target);
+  const partes = ['Olá, Régis! Vim pelo site.'];
+  if (f.get('tipo')) partes.push(`Projeto: ${f.get('tipo')}.`);
+  if ((f.get('cidade') || '').trim()) partes.push(`Cidade: ${f.get('cidade').trim()}.`);
+  if ((f.get('etapa') || '').trim()) partes.push(`Etapa: ${f.get('etapa').trim()}.`);
+  open(`https://wa.me/${WA}?text=${encodeURIComponent(partes.join(' '))}`, '_blank', 'noopener');
+});
+
+$('.reduz').addEventListener('click', () => setReduz(!reduz));
+mq.addEventListener('change', e => setReduz(e.matches));
+setReduz(reduz);
+})();
+</script>
+</body>
+</html>
