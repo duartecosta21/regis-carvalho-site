@@ -393,6 +393,11 @@ html.reduzido{scroll-behavior:auto}
 }
 .proj{min-width:0}
 @media (max-width:640px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* 14/11: contato com uma ação só (Thiago: "se decide"); sem formulário nem número solto */
+.contato{grid-template-columns:1fr}
+.cont-txt{max-width:760px}
+@media (max-width:640px){.contato .btn{width:100%;justify-content:center;font-size:16px;padding:16px 18px}}
 </style>
 </head>
 <body>
@@ -446,19 +451,6 @@ html.reduzido{scroll-behavior:auto}
   <ol class="passos"><li class="passo rv" data-step="0"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-3809497f6d-640.avif 640w, img/proc-3809497f6d-1010.avif 1010w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-3809497f6d-640.webp 640w, img/proc-3809497f6d-1010.webp 1010w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-3809497f6d-1010.webp" width="1010" height="1346" alt="Levantamento" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">01</span><h3>Levantamento</h3><p>Conferir medidas e entender o espaço antes de qualquer traço. Um erro aqui compromete circulação e funcionalidade.</p></div></li><li class="passo rv" data-step="1"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-1823457529-640.avif 640w, img/proc-1823457529-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-1823457529-640.webp 640w, img/proc-1823457529-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-1823457529-1080.webp" width="1440" height="1440" alt="Estudo e 3D" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">02</span><h3>Estudo e 3D</h3><p>Volumes, cores e texturas aparecem na maquete eletrônica, para o cliente enxergar e aprovar o resultado com clareza.</p></div></li><li class="passo rv" data-step="2"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-4d6440a312-640.avif 640w, img/proc-4d6440a312-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-4d6440a312-640.webp 640w, img/proc-4d6440a312-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-4d6440a312-1080.webp" width="1440" height="1920" alt="Projeto técnico" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">03</span><h3>Projeto técnico</h3><p>Sem embasamento técnico, o 3D é só imagem. O projeto executivo traduz as escolhas em soluções detalhadas e executáveis.</p></div></li><li class="passo rv" data-step="3"><div class="passo-img"><picture><source type="image/avif" srcset="img/proc-704904b21a-640.avif 640w, img/proc-704904b21a-1080.avif 1080w" sizes="(min-width:900px) 46vw, 100vw"><source type="image/webp" srcset="img/proc-704904b21a-640.webp 640w, img/proc-704904b21a-1080.webp 1080w" sizes="(min-width:900px) 46vw, 100vw"><img src="img/proc-704904b21a-1080.webp" width="1440" height="1440" alt="Execução" loading="lazy" decoding="async"></picture></div><div class="passo-txt"><span class="passo-n">04</span><h3>Execução</h3><p>Conferir de perto se o que foi desenhado está sendo executado do jeito que foi aprovado no 3D.</p></div></li></ol>
 </section>
 
-<section class="reforma" aria-labelledby="t-ref">
-  <div class="ref-txt rv">
-    <p class="kicker">Reforma executada · Airbnb 405</p>
-    <h2 id="t-ref">23 m² que passaram a entregar muito mais.</h2>
-    <p>Divisórias removidas, bancada redesenhada, revestimentos, iluminação e banheiro renovados, numa reforma para locação por temporada na Praia de Itapuã.</p>
-    <button class="cta" data-proj="a405">Ver a reforma <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-  </div>
-  <div class="ref-img">
-    <div class="antes"><span class="tag">Antes</span><picture><source type="image/avif" srcset="img/a405-antes-0-640.avif 640w" sizes="(min-width:900px) 16vw, 45vw"><source type="image/webp" srcset="img/a405-antes-0-640.webp 640w" sizes="(min-width:900px) 16vw, 45vw"><img src="img/a405-antes-0-640.webp" width="720" height="1280" alt="Airbnb 405 antes da reforma 1" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="img/a405-antes-1-640.avif 640w" sizes="(min-width:900px) 16vw, 45vw"><source type="image/webp" srcset="img/a405-antes-1-640.webp 640w" sizes="(min-width:900px) 16vw, 45vw"><img src="img/a405-antes-1-640.webp" width="720" height="1280" alt="Airbnb 405 antes da reforma 2" loading="lazy" decoding="async"></picture></div>
-    <div class="depois rv"><span class="tag">Depois</span><picture><source type="image/avif" srcset="img/a405-00-640.avif 640w, img/a405-00-720.avif 720w" sizes="(min-width:900px) 34vw, 100vw"><source type="image/webp" srcset="img/a405-00-640.webp 640w, img/a405-00-720.webp 720w" sizes="(min-width:900px) 34vw, 100vw"><img src="img/a405-00-720.webp" width="720" height="1280" alt="Airbnb 405 depois da reforma" loading="lazy" decoding="async"></picture></div>
-  </div>
-</section>
-
 <section class="escritorio" id="escritorio" aria-labelledby="t-esc">
   <div class="esc-img rv"><picture><source type="image/avif" srcset="img/regis-retrato-640.avif 640w, img/regis-retrato-1080.avif 1080w" sizes="(min-width:900px) 40vw, 100vw"><source type="image/webp" srcset="img/regis-retrato-640.webp 640w, img/regis-retrato-1080.webp 1080w" sizes="(min-width:900px) 40vw, 100vw"><img src="img/regis-retrato-1080.webp" width="1440" height="1440" alt="Régis Carvalho com o projeto no tablet" loading="lazy" decoding="async"></picture></div>
   <div class="esc-txt">
@@ -480,23 +472,8 @@ html.reduzido{scroll-behavior:auto}
     <p class="kicker">Seu próximo projeto</p>
     <h2 id="t-cont" class="rv">Conte o que você tem em mente.</h2>
     <p class="rv">Uma casa nova, uma reforma ou um espaço para o seu negócio. Atendimento presencial em Vila Velha e online.</p>
-    <a class="cta wa" href="https://wa.me/5527992831871" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg> <span class="num">(27) 99283-1871</span></a>
-    <a class="ig" href="https://www.instagram.com/regiscarvalho.arquitetura/" target="_blank" rel="noopener">@regiscarvalho.arquitetura</a>
+    <a class="btn gold big" href="https://wa.me/5527992831871?text=Ol%C3%A1%2C%20R%C3%A9gis!%20Vim%20pelo%20site." target="_blank" rel="noopener">Conversar com o Régis no WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
   </div>
-  <form class="form" id="form" novalidate>
-    <fieldset><legend>Tipo de projeto</legend>
-      <div class="opts">
-        <label><input type="radio" name="tipo" value="Casa do zero"><span>Casa do zero</span></label>
-        <label><input type="radio" name="tipo" value="Reforma"><span>Reforma</span></label>
-        <label><input type="radio" name="tipo" value="Interiores"><span>Interiores</span></label>
-        <label><input type="radio" name="tipo" value="Espaço comercial"><span>Comercial</span></label>
-      </div>
-    </fieldset>
-    <label class="campo"><span>Cidade</span><input name="cidade" autocomplete="address-level2" placeholder="Ex.: Vila Velha"></label>
-    <label class="campo"><span>Em que etapa você está? <em>opcional</em></span><input name="etapa" placeholder="Ex.: tenho o terreno, vou reformar em março"></label>
-    <button class="btn gold" type="submit">Montar mensagem no WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-    <p class="form-nota">Abre o WhatsApp com a mensagem pronta para você revisar.</p>
-  </form>
 </section>
 </main>
 
@@ -620,16 +597,6 @@ $$('.dep-btn').forEach(b => b.addEventListener('click', () => { const i = $('img
 $('.pj-x', dz).addEventListener('click', () => dz.close());
 dz.addEventListener('click', e => { if (e.target === dz) dz.close(); });
 dz.addEventListener('close', () => volta && volta.focus());
-
-/* formulário: só prepara a mensagem */
-$('#form').addEventListener('submit', e => {
-  e.preventDefault(); const f = new FormData(e.target);
-  const partes = ['Olá, Régis! Vim pelo site.'];
-  if (f.get('tipo')) partes.push(`Projeto: ${f.get('tipo')}.`);
-  if ((f.get('cidade') || '').trim()) partes.push(`Cidade: ${f.get('cidade').trim()}.`);
-  if ((f.get('etapa') || '').trim()) partes.push(`Etapa: ${f.get('etapa').trim()}.`);
-  open(`https://wa.me/${WA}?text=${encodeURIComponent(partes.join(' '))}`, '_blank', 'noopener');
-});
 
 $('.reduz').addEventListener('click', () => setReduz(!reduz));
 mq.addEventListener('change', e => setReduz(e.matches));
